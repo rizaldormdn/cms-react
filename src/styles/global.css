@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		@apply scroll-smooth;
+	}
+	body {
+		@apply overflow-x-hidden duration-700 lg:text-xl text-base bg-bglight;
+	}
+
+	a {
+		@apply text-primarymain hover:text-primaryalternativedark visited:text-primaryalternativedark visited:font-bold;
+	}
+
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
