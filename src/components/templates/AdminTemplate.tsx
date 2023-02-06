@@ -12,6 +12,7 @@ const AdminTemplate = (props: Props) => {
       <div className="flex flex-col justify-between w-full">
         <PrimaryNavbar />
         <Container>Your content here </Container>
+
         <Footer
           established={false}
           author="Salt Academy"
