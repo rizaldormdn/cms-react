@@ -1,31 +1,36 @@
-import ReactDOM from "react-dom/client";
-import { act } from "react-dom/test-utils";
-import ListItems from "./ListItem";
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import ListItem from './ListItem';
 
-
-let container: any;
-
-beforeEach(() => {
-	container = document.createElement("div");
-	document.body.appendChild(container);
-});
-
-afterEach(() => {
-	document.body.removeChild(container);
-	container = null;
-});
-
-it("should contain blogs text", () => {
-	act(() => {
-    ReactDOM.createRoot(container).render(
-      <MemoryRouter initialEntries={[{ pathname: '/admin/blogs' }]}>
-        <ListItems title="blogs" goTo="/admin/blogs" />
+describe('ListItem component', () => {
+  it('renders correctly', () => {
+    const src = <img src="example.png" alt="example" />;
+    const title = 'Example';
+    const goTo = '/example';
+    const { getByText, container } = render(
+      <MemoryRouter>
+        <ListItem src={src} title={title} goTo={goTo} />
       </MemoryRouter>
     );
+    expect(container.innerHTML).toContain(title);
+    expect(container.innerHTML).toContain(src.props.src);
+    const link = getByText(title);
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute('href', goTo);
   });
 
-	const button = container.querySelector("a");
-
-	expect(button.textContent).toBe("blogs");
+  it('redirects to the correct page', () => {
+    const src = <img src="example.png" alt="example" />;
+    const title = 'Example';
+    const goTo = '/example';
+    const { getByText } = render(
+      <MemoryRouter>
+        <ListItem src={src} title={title} goTo={goTo} />
+      </MemoryRouter>
+    );
+    const link = getByText(title);
+    fireEvent.click(link);
+    expect(window.location.pathname).toBe(goTo);
+  });
 });
