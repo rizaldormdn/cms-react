@@ -23,7 +23,7 @@ const PageNotFound = (props: Props) => {
           {props.description}
         </p>
         <img className="my-2" src={props.src} />
-        <div className="mx-[642px] mt-[40px] w-[156px] h-[38px] text-base bg-[#9155FD] text-white py-2 px-2 text-center hover:bg-[#F3A200] hover:rounded-[8px] active:scale-95">
+        <div className="mx-[642px] mt-[40px] w-[156px] h-[38px] text-base bg-[#9155FD] text-white py-2 px-2 text-center hover:bg-purple-600 rounded-[8px] active:scale-95">
           <Button
             title="BACK TO HOME"
             action={(e) => {
@@ -32,7 +32,7 @@ const PageNotFound = (props: Props) => {
           />
         </div>
       </div>
-      <div className="flex absolute ml-[90.07px] mt-[718.92px]">
+      <div className="flex absolute ml-[90.07px] mt-[650px]">
         <img className="w-[88.04px] h-[190px]" src={props.image} />
       </div>
     </div>
