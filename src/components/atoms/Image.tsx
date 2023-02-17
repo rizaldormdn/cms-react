@@ -1,14 +1,21 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-  url: string
-  alt: string
-}
+  src: any;
+  alt: string;
+  width: any;
+  height: any;
+};
 
 const Image = (props: Props) => {
   return (
-    <img src={props.url} alt={props.alt} loading='lazy' />
-  )
-}
+    <img
+      src={props.src}
+      alt={props.alt}
+      width={props.width}
+      height={props.height}
+    />
+  );
+};
 
-export default Image
+export default Image;
