@@ -2,9 +2,9 @@ import React from "react";
 
 type Props = {
   src: any;
-  alt: string;
-  width: any;
-  height: any;
+  alt?: string;
+  width?: any;
+  height?: any;
 };
 
 const Image = (props: Props) => {
