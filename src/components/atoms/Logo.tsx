@@ -1,6 +1,10 @@
 import React from "react";
 import Image from "../atoms/Image";
+<<<<<<< Updated upstream
 import mainLogo from "../../assets/images/mainlogo.svg";
+=======
+import mainLogo from "../../assets/static/svgs/mainlogo.svg";
+>>>>>>> Stashed changes
 
 type Props = {};
 
