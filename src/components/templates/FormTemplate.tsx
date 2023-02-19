@@ -15,12 +15,12 @@ type Props = {
 
 const FormTemplate = (props: Props) => {
   return (
-    <div className="w-full flex bg-[#F4F5FA] relative h-fit">
-      <div className="flex flex-col h-fit mx-auto my-auto justify-center items-center">
-        <div className="flex flex-col bg-white p-2 w-full h-full">
+    <div className="flex lg:w-full  lg:flex-col justify-center items-center h-screen -mt-20">
+      <div className="flex flex-col h-fit lg:mx-auto justify-center items-center lg:w-[100%]">
+        <div className="flex flex-col p-2 w-full h-full">
           <form
             method="submit"
-            className="flex flex-col w-[448px] mx-auto justify-center h-[587px] mt-0 rounded-md shadow-md  "
+            className="flex flex-col w-[448px] bg-white mx-auto justify-center h-[587px] mt-0 rounded-md shadow-md  "
           >
             <div className="flex flex-col mb-[30px] items-center">
               <MainLogo />
@@ -33,14 +33,23 @@ const FormTemplate = (props: Props) => {
           </form>
         </div>
       </div>
-      <div className="flex absolute ml-[30px] mt-[700px]">
-        <img className="w-[245.83px] h-[184.53px]" src={props.src} />
-      </div>
-      <div className="flex absolute ml-[1250px] mt-[635px]">
-        <img className="w-[88.04px] h-[190px]" src={props.image} />
-      </div>
-      <div className="flex absolute mt-[751px] -z-50 mx-auto">
-        <img className="w-full h-[172px]" src={props.background} />
+      <div className="absolute bottom-0 md:bottom-0 w-[100%]">
+        <div className="absolute ">
+          {" "}
+          <img
+            className="lg:w-[245.83px] lg:h-[184.53px] md:w-[125px] md:h-[95px]"
+            src={props.src}
+          />
+        </div>
+        <div className="absolute lg:right-20 lg:bottom-32 md:bottom-12 md:right-20">
+          <img
+            className="lg:w-[88.04px] lg:h-[190px] md:w-[50px] md:h-[100px]"
+            src={props.image}
+          />
+        </div>
+        <div className="-z-50 mx-auto bg-cover lg:w-full">
+          <img className="lg:w-[100%] md:w-[100%]" src={props.background} />
+        </div>
       </div>
     </div>
   );
