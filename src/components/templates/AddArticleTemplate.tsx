@@ -3,18 +3,18 @@ import PrimaryNavbar from '../organisms/PrimaryNavbar'
 import Sidebar from '../organisms/Sidebar'
 import Footer from '../molecules/Footer'
 import Container from '../atoms/Container'
-import FormArticle from '../atoms/FormArticle'
+import AddArticle from '../pages/AddArticle'
 
 type Props = {
 }
 
-const AdminTemplate = (props: Props) => {
+const AddArticleTemplate = () => {
   return (
     <div className='flex flex-row-reverse min-h-screen w-full'>
       <div className='flex flex-col justify-between w-full'>
         <PrimaryNavbar />
         <Container>
-          <FormArticle/>
+            <AddArticle />
         </Container>
         <Footer established={false} author='Salt Academy' authorLink='https://saltacademy.id' />
       </div>
@@ -25,4 +25,4 @@ const AdminTemplate = (props: Props) => {
   )
 }
 
-export default AdminTemplate
+export default AddArticleTemplate
