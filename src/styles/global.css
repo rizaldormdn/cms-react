@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@media screen and (max-width: 768px) {
+  .responsive-1{
+    @apply hidden origin-left duration-200;
+  }
+}
+
 @layer base {
 	html {
 		@apply scroll-smooth;
