@@ -7,7 +7,7 @@ const FormArticle = () => {
                 <label className="label">
                     Title</label>
                 <div className="control">
-                    <input className="w-full border" type="text" placeholder="Text input" />
+                    <input className="px-2 py-2 border border-gray-800 focus:border-gray-400 lg:w-full md:w-full rounded-md" type="text" placeholder="Text input" />
                 </div>
             </div>
             <div className="field">
@@ -24,11 +24,11 @@ const FormArticle = () => {
                 <p className="help is-success">This username is available</p>
                 <textarea className="w-full border h-full" placeholder="Compose an epic.."></textarea>
             </div>
-            <div className="flex flex-col border">
+            <div className="flex flex-col">
             <label className="">Tags</label>
                 <div className='flex'>
-                <input className="w-[40%]" placeholder="tutorial, review, ..." />
-                <input className="w-[40%]" placeholder="Email input" />
+                <input className="px-2 py-2 border border-gray-800 focus:border-gray-400 lg:w-full md:w-full rounded-md" placeholder="tutorial, review, ..." />
+                <input className="px-2 py-2 border border-gray-800 focus:border-gray-400 lg:w-full md:w-full rounded-md" placeholder="Email input" />
                 </div>
                 <div className="control has-icons-left has-icons-right">
                     
