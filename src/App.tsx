@@ -12,11 +12,11 @@ const App = () => {
 				<Route path="/" element={<Admin />} />
 				<Route path="/registration" element={<Registration />} />
 
-				{/* Error Route */}
-				<Route path="*" element={<BadRequest />} />
-			</Routes>
-		</BrowserRouter>
-	);
+        {/* Error Route */}
+        <Route path="*" element={<BadRequest />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
