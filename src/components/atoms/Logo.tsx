@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "../atoms/Image";
-import mainLogo from "../../assets/static/svgs/mainlogo.svg";
+import Image from "./Image";
+import mainLogo from "../../assets/images/mainlogo.svg";
 
 type Props = {};
 
