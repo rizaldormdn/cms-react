@@ -19,7 +19,7 @@ const RegistrationForm = () => {
     >
       <FieldUsername />
       <FieldEmail />
-      <FieldPassword />
+      <FieldPassword placeholder="Password" />
       <div className="mt-[50px] h-[42px] lg:mx-8 md:mx-8 text-base bg-[#9155FD] text-white py-2 px-2 text-center lg:hover:bg-purple-600 rounded-[8px] lg:hover:font-bold active:scale-95 cursor-pointer">
         <Button
           title="REGISTER"
