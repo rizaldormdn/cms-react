@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "./Image";
+import Image from "../atoms/Image";
 import mainLogo from "../../assets/images/mainlogo.svg";
 
 type Props = {};

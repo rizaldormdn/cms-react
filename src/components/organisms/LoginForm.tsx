@@ -17,7 +17,7 @@ const LoginForm = () => {
       background={Mask}
     >
       <FieldEmail />
-      <FieldPassword />
+      <FieldPassword placeholder={'Password'} />
       <div className="flex flex-row justify-between text-[14px] mx-10">
         <input type="checkbox" id="rember-me" />
         <label>Rember Me </label>

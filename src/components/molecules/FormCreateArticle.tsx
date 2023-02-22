@@ -3,6 +3,7 @@ import Button from '../atoms/Button'
 import Input from '../atoms/Input'
 import Label from '../atoms/Label'
 import RichTextEditor from '../atoms/RTE'
+import AddIcon from '@mui/icons-material/Add';
 
 const FormCreateArticle = () => {
     return (
@@ -25,8 +26,9 @@ const FormCreateArticle = () => {
                         <p>To enter multiple tags please use a coma (,)</p>
                     </div>
                     <div>
-                        <div className='border rounded-lg px-2 py-2'>
-                            <Button action={(e) => { alert("Triggered"); }} title='Add file +' />
+                        <div className='flex'>
+                            <div className=''><Button action={(e) => { alert("Triggered"); }} title='Add File' buttonStyle='flex justify-start border rounded-lg pl-2 py-2 pr-[7rem]'/></div>
+                            <div className='flex items-center text-secondaryalternativedark ml-[-25px]'><AddIcon/></div>
                         </div>
                         <p>Insert Featured Image</p>
                     </div>

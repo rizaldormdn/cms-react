@@ -5,6 +5,7 @@ import BadRequest from "./components/pages/BadRequest";
 import { BrowserRouter } from "react-router-dom";
 import Registration from "./components/pages/Registration";
 import CreateArticle from "./components/pages/CreateArticle";
+import SuccessPage from "./components/pages/SuccessPage";
 
 const App = () => {
 	return (
@@ -15,11 +16,10 @@ const App = () => {
 				{/* Error Route */}
 				<Route path="*" element={<BadRequest />} />
 				<Route path="/registration" element={<Registration />} />
-        {/* Error Route */ }
-	<Route path="*" element={<BadRequest />} />
-      </Routes >
-    </BrowserRouter >
-  );
+				<Route path="/success" element={<SuccessPage />} />
+			</Routes >
+		</BrowserRouter>
+	);
 };
 
 export default App;
