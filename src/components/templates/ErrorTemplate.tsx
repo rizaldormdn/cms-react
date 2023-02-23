@@ -11,7 +11,7 @@ type Props = {
 	image?: string;
 };
 
-const PageNotFound = (props: Props) => {
+const ErrorTemplate = (props: Props) => {
 	const navigate = useNavigate();
   
 	return (
