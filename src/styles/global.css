@@ -20,6 +20,12 @@
 		@apply text-primarymain hover:text-primaryalternativedark visited:text-primaryalternativedark visited:font-bold;
 	}
 
+  .text-animation{
+    @apply relative text-slate-300 text-[2vw] uppercase font-[800]
+  }
+  .text-animation::before{
+    @apply content-['Welcome...'] absolute text-green-400 border-r-2 border-green-500 top-0 left-0 w-0 h-full overflow-hidden animate-animate
+  }
 }
 
 .sr {
