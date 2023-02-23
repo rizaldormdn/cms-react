@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-  children: React.ReactNode
-  fullsize?: boolean
-}
+  children: React.ReactNode;
+  fullsize?: boolean;
+};
 
 const Container = (props: Props) => {
   return (
@@ -11,4 +11,4 @@ const Container = (props: Props) => {
   )
 }
 
-export default Container
+export default Container;
