@@ -10,7 +10,7 @@ type Props = {
   image?: string;
 };
 
-const ErrorTemplate = (props: Props) => {
+const PageNotFound = (props: Props) => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-[#F4F5FA]">
       <div className="flex flex-col h-full items-center justify-between">
