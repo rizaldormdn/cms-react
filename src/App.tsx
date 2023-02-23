@@ -5,14 +5,16 @@ import BadRequest from "./components/pages/BadRequest";
 import { BrowserRouter } from "react-router-dom";
 import Registration from "./components/pages/Registration";
 import SuccessPage from "./components/pages/SuccessPage";
+import Author from "./components/pages/Author";
 
 const App = () => {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Admin />} />
-				<Route path="/registration" element={<Registration />} />
-				<Route path="/success" element={<SuccessPage />} />
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Admin />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/authors" element={<Author />} />
         {/* Error Route */}
         <Route path="*" element={<BadRequest />} />
       </Routes>
