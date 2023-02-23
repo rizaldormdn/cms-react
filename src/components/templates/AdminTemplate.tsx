@@ -14,7 +14,6 @@ const AdminTemplate = (props: Props) => {
         <PrimaryNavbar />
         <Container>
           Your content here
-          <Login />{" "}
         </Container>
         <Footer
           established={false}
