@@ -22,7 +22,7 @@ const AdminTemplate = (props: Props) => {
       <div className="flex flex-col justify-between w-full">
         <PrimaryNavbar />
         <Container>
-          <Login />{" "}
+          Your content here
         </Container>
         <Footer
           established={false}
