@@ -14,9 +14,9 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Admin />} />
 				<Route path="/createarticle" element={<CreateArticle />} />
+				
 				{/* Error Route */}
 				<Route path="*" element={<BadRequest />} />
-				<Route path="/registration" element={<Registration />} />
 				<Route path="/success" element={<SuccessPage />} />
 			</Routes >
 		</BrowserRouter>
