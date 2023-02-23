@@ -4,22 +4,23 @@ import Admin from "./components/pages/Admin";
 import BadRequest from "./components/pages/BadRequest";
 import { BrowserRouter } from "react-router-dom";
 import Registration from "./components/pages/Registration";
+import CreateArticle from "./components/pages/CreateArticle";
 import SuccessPage from "./components/pages/SuccessPage";
-import Login from "./components/pages/Login";
+import Author from "./components/pages/Author";
 
 const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Admin />} />
-				<Route path="/register" element={<Registration />} />
-				<Route path="/login" element={<Login />} />
+				<Route path="/createarticle" element={<CreateArticle />} />
+				{/* Error Route */}
+				<Route path="*" element={<BadRequest />} />
+				<Route path="/registration" element={<Registration />} />
 				<Route path="/success" element={<SuccessPage />} />
-        {/* Error Route */}
-        <Route path="*" element={<BadRequest />} />
-      </Routes>
-    </BrowserRouter>
-  );
+			</Routes >
+		</BrowserRouter>
+	);
 };
 
 export default App;

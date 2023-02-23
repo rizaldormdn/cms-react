@@ -3,6 +3,7 @@ import React from "react";
 type Props = {
   action: (e: React.MouseEvent) => void;
   title: string;
+  buttonStyle?:string;
 };
 
 const Button = (props: Props) => {

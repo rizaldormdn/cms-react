@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../atoms/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -37,4 +38,4 @@ const PageNotFound = (props: Props) => {
 	);
 };
 
-export default PageNotFound;
+export default ErrorTemplate;

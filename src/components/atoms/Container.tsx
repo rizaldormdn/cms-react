@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 type Props = {
-  children: React.ReactNode
-  fullsize?: boolean
-}
+  children: React.ReactNode;
+  fullsize?: boolean;
+};
 
 const Container = (props: Props) => {
   return (
-    <div className='flex flex-col bg-white p-2 w-full h-full rounded-sm my-2'>{props.children}</div>
+    <div className='flex flex-col bg-white p-2 w-full h-full rounded-sm my-2 text-base'>{props.children}</div>
   )
 }
 
-export default Container
+export default Container;
