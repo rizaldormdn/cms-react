@@ -1,4 +1,5 @@
 import React from "react";
+
 import Button from "../atoms/Button";
 
 type Props = {
@@ -39,4 +40,4 @@ const PageNotFound = (props: Props) => {
   );
 };
 
-export default PageNotFound;
+export default ErrorTemplate;
