@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Mask from "../../assets/images/Mask.svg";
 import Tree from "../../assets/images/Tree.svg";
 import Tree3 from "../../assets/images/Tree2-1.svg";
@@ -10,14 +11,17 @@ import FormTemplate from "../templates/FormTemplate";
 
 
 const LoginForm = () => {
+  const navigate = useNavigate()
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const res = await api.post("http://localhost:8080/v1/login", { email, password })
-      console.log(res.data.data);
+      const res = await api.post("/v1/login", { email, password })
+      console.log(res.data);
+      navigate("/createarticle")
       return res
 
     } catch (error) {
@@ -35,8 +39,8 @@ const LoginForm = () => {
       onsubmit={handleLogin}
     >
       <div className="p-6">
-        <Input type="email" placeHolder="email" style='mb-5' onchange={(e) => setEmail(e.target.value)} value={email}/>
-        <Input type="password" placeHolder={'Password'} onchange={(e) => setPassword(e.target.value)} value={password} />
+        <Input type="email" placeHolder="email" style={'mb-5'} onchange={(e) => setEmail(e.target.value)} value={email} />
+        <Input type={"password"} placeHolder={'Password'} onchange={(e) => setPassword(e.target.value)} value={password} />
       </div>
       <div className="flex flex-row justify-between text-[14px] mx-10">
         <input type="checkbox" id="rember-me" />
