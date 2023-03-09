@@ -5,7 +5,9 @@ type Props = {}
 
 const Admin = (props: Props) => {
   return (
-    <AdminTemplate />
+    <AdminTemplate>
+      Welcome to the Admin Page
+    </AdminTemplate>
   )
 }
 
