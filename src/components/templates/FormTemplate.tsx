@@ -12,6 +12,7 @@ type Props = {
 	background?: string;
 	title: string;
 	content: string;
+	onsubmit?: (e: React.FormEvent<HTMLFormElement>) => void
 };
 
 const FormTemplate = (props: Props) => {
@@ -19,7 +20,7 @@ const FormTemplate = (props: Props) => {
 		<div className="flex lg:w-full  lg:flex-col justify-center items-center min-h-screen">
 			<div className="flex flex-col h-fit lg:mx-auto justify-center items-center lg:w-[100%]">
 				<div className="flex flex-col p-2 w-full h-full">
-					<form className="flex flex-col w-[448px] bg-white mx-auto justify-center h-[587px] mt-0 rounded-md shadow-md  ">
+					<form onSubmit={props.onsubmit} className="flex flex-col w-[448px] bg-white mx-auto justify-center h-[587px] mt-0 rounded-md shadow-md  ">
 						<div className="flex flex-col mb-[30px] items-center">
 							<MainLogo />
 						</div>

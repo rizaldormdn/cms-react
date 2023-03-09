@@ -3,7 +3,9 @@ import { EditorState } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const RichTextEditor = () => {
+type Props = {}
+
+const RichTextEditor = (props: Props) => {
     const [editorState, setEditorState] = useState(EditorState.createEmpty());
 
     const onEditorStateChange = (editorState: EditorState) => {
