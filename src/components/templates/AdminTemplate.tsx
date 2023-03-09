@@ -4,9 +4,8 @@ import Sidebar from "../organisms/Sidebar";
 import Footer from "../molecules/Footer";
 import ArticleList from "../molecules/ArticleList"
 import Container from "../atoms/Container";
-// import Login from "../pages/Login";
-  
-
+import Login from "../pages/Login";
+import Author from "../pages/Author";
 
 type Props = {};
 

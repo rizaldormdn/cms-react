@@ -1,7 +1,7 @@
 import React from "react";
 import ErrorTemplate from "../templates/ErrorTemplate";
 import PagNotFoundImage from "../../assets/images/pose5.png";
-import Tree from "../../assets/images/Tree.png";
+import Tree from "../../assets/static/svgs/Tree.svg";
 
 const BadRequest = () => {
   return (
