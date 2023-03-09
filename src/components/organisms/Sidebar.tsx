@@ -22,7 +22,7 @@ const Sidebar = (props: Props) => {
 
   return (
     <aside className="flex flex-col min-h-screen">
-      <div className="flex justify-items-center w-[50%]">
+      <div className="flex justify-items-center w-fit">
         <Header
           siteTitle="Materio"
           siteLogoUrl="https://www.pngarts.com/files/3/Logo-PNG-Transparent-Image.png"

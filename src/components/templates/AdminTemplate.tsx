@@ -7,9 +7,10 @@ import Sidebar from '../organisms/Sidebar'
 type Props = {};
 
 const AdminTemplate = (props: Props) => {
-  return (
-    <div className="flex flex-row-reverse min-h-screen w-full">
-      <div className="flex flex-col justify-between w-full">
+	return (
+		<div className="flex flex-row min-h-screen w-full">
+			<Sidebar />
+			<div className="flex flex-col justify-between pr-8 w-full">
         <PrimaryNavbar />
         <Container>
           
@@ -20,9 +21,7 @@ const AdminTemplate = (props: Props) => {
           authorLink="https://saltacademy.id"
         />
       </div>
-      <div className="flex flex-col w-1/5">
-        <Sidebar />
-      </div>
+
     </div>
   );
 };
