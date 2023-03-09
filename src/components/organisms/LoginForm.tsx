@@ -3,8 +3,6 @@ import FormTemplate from "../templates/FormTemplate";
 import Tree from "../../assets/images/Tree.svg";
 import Tree3 from "../../assets/images/Tree2-1.svg";
 import Mask from "../../assets/images/Mask.svg";
-import FieldEmail from "../molecules/FieldEmail";
-import FieldPassword from "../molecules/FieldPassword";
 import Button from "../atoms/Button";
 import Anchor from "../atoms/Anchor";
 
@@ -21,8 +19,8 @@ const LoginForm = (props: LoginFormProps) => {
       image={Tree}
       background={Mask}
     >
-      <FieldEmail />
-      <FieldPassword placeholder={'Password'} />
+      {/* <FieldEmail /> */}
+      {/* <FieldPassword placeholder={'Password'} /> */}
       <div className="flex flex-row justify-between text-[14px] mx-10">
         <input type="checkbox" id="rember-me" />
         <label>Rember Me </label>
