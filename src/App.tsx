@@ -1,12 +1,10 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RegistrationForm from "./components/organisms/RegistrationForm";
 import Admin from "./components/pages/Admin";
 import BadRequest from "./components/pages/BadRequest";
-import { BrowserRouter } from "react-router-dom";
-import Registration from "./components/pages/Registration";
 import CreateArticle from "./components/pages/CreateArticle";
+import Login from "./components/pages/Login";
 import SuccessPage from "./components/pages/SuccessPage";
-import Author from "./components/pages/Author";
 
 const App = () => {
 	return (
@@ -18,6 +16,8 @@ const App = () => {
 				{/* Error Route */}
 				<Route path="*" element={<BadRequest />} />
 				<Route path="/success" element={<SuccessPage />} />
+				<Route path="/registrasi" element={<RegistrationForm />} />
+				<Route path="/login" element={<Login />} />
 			</Routes >
 		</BrowserRouter>
 	);

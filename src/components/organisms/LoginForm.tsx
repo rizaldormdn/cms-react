@@ -1,18 +1,30 @@
-import React from "react";
-import FormTemplate from "../templates/FormTemplate";
+import React, { useState } from "react";
+import Mask from "../../assets/images/Mask.svg";
 import Tree from "../../assets/images/Tree.svg";
 import Tree3 from "../../assets/images/Tree2-1.svg";
-import Mask from "../../assets/images/Mask.svg";
-import FieldEmail from "../molecules/FieldEmail";
-import FieldPassword from "../molecules/FieldPassword";
-import Button from "../atoms/Button";
+import { api } from "../../utils/api";
 import Anchor from "../atoms/Anchor";
+import Button from "../atoms/Button";
+import Input from "../atoms/InputEmail";
+import FormTemplate from "../templates/FormTemplate";
 
-type LoginFormProps = {
-  action: (e: React.MouseEvent) => void,
-}
 
-const LoginForm = (props: LoginFormProps) => {
+const LoginForm = () => {
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    try {
+      const res = await api.post("http://localhost:8080/v1/login", { email, password })
+      console.log(res.data.data);
+      return res
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
   return (
     <FormTemplate
       title="Welcome to CMS Admin! 👋🏻"
@@ -20,9 +32,12 @@ const LoginForm = (props: LoginFormProps) => {
       src={Tree3}
       image={Tree}
       background={Mask}
+      onsubmit={handleLogin}
     >
-      <FieldEmail />
-      <FieldPassword placeholder={'Password'} />
+      <div className="p-6">
+        <Input type="email" placeHolder="email" style='mb-5' onchange={(e) => setEmail(e.target.value)} value={email}/>
+        <Input type="password" placeHolder={'Password'} onchange={(e) => setPassword(e.target.value)} value={password} />
+      </div>
       <div className="flex flex-row justify-between text-[14px] mx-10">
         <input type="checkbox" id="rember-me" />
         <label>Rember Me </label>
@@ -31,7 +46,7 @@ const LoginForm = (props: LoginFormProps) => {
       <div className="mx-10">
         <Button
           title="LOGIN"
-          action={(e) => props.action(e)}
+          action={(e) => { }}
         />
         <p className="text-base">New on out Platform? <Anchor internal title="Signup" url="/register" /></p>
       </div>
