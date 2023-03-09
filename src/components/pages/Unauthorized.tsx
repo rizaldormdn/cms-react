@@ -1,7 +1,7 @@
 import React from "react";
 import ErrorTemplate from "../templates/ErrorTemplate";
 import UnauthorizedImage from "../../assets/images/pose9.png";
-import Tree2 from "../../assets/images/Tree2.png";
+import Tree2 from "../../assets/static/svgs/Tree2.svg";
 
 const Unauthorized = () => {
   return (

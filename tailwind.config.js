@@ -1,3 +1,5 @@
+const { keyframes } = require('@emotion/react');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -13,8 +15,22 @@ module.exports = {
         secondaryalternative: "#9C9FA4",
         secondaryalternativedark: "#4D5056",
         bglight: "#F4F5FA"
+      },
+      keyframes: {
+        animate:{
+          '0%,10%,100%':{
+            width:'0%'
+          },
+          '70%,80%,90%':{
+            width:'100%'
+          }
+        }
       }
     },
+      animation: {
+        animate: 'animate 4s linear infinite'
+      }
+    
   },
   plugins: [],
 }
