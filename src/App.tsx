@@ -11,16 +11,15 @@ const App = () => {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Admin />} />
-				<Route path="/createarticle" element={<CreateArticle />} />
-				
-				{/* Error Route */}
-				<Route path="*" element={<BadRequest />} />
+				<Route path="/registration" element={<Registration />} />
+				<Route path="/author" element={<Author />} />
 				<Route path="/success" element={<SuccessPage />} />
-				<Route path="/registrasi" element={<RegistrationForm />} />
-				<Route path="/login" element={<Login />} />
-			</Routes >
-		</BrowserRouter>
-	);
+        {/* Error Route */}
+        <Route path="*" element={<BadRequest />} />
+        
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
