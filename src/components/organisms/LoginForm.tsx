@@ -6,7 +6,8 @@ import Tree3 from "../../assets/images/Tree2-1.svg";
 import { api } from "../../utils/api";
 import Anchor from "../atoms/Anchor";
 import Button from "../atoms/Button";
-import Input from "../atoms/InputEmail";
+import Input from "../atoms/inputs/InputEmail";
+
 import FormTemplate from "../templates/FormTemplate";
 
 

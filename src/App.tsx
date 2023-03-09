@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import RegistrationForm from "./components/organisms/RegistrationForm";
 import Admin from "./components/pages/Admin";
+import Author from "./components/pages/Author";
 import BadRequest from "./components/pages/BadRequest";
 import CreateArticle from "./components/pages/CreateArticle";
 import Login from "./components/pages/Login";

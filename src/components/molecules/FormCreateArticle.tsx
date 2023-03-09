@@ -1,6 +1,5 @@
-import React from 'react'
 import Button from '../atoms/Button'
-import Input from '../atoms/Input'
+import Input from '../atoms/inputs/Input'
 import Label from '../atoms/Label'
 import RichTextEditor from '../atoms/RTE'
 import AddIcon from '@mui/icons-material/Add';
@@ -12,7 +11,7 @@ const FormCreateArticle = () => {
                 <Label label='Title' />
                 <div className='flex'>
                 <div className='w-full'>
-                <Input placeHolder='A journey to a great article title' />
+                {/* <Input placeHolder='A journey to a great article title' /> */}
                 </div>
             </div>
             <div>
@@ -22,7 +21,7 @@ const FormCreateArticle = () => {
                 <Label label='Tags' />
                 <div className='flex gap-8 items-center'>
                     <div>
-                        <Input placeHolder='tutorial, reviev, ...' />
+                        {/* <Input placeHolder='tutorial, reviev, ...' /> */}
                         <p>To enter multiple tags please use a coma (,)</p>
                     </div>
                     <div>
