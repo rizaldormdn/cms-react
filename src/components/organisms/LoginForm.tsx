@@ -54,6 +54,7 @@ const LoginForm = () => {
         />
         <p className="text-base">New on out Platform? <Anchor internal title="Signup" url="/register" /></p>
       </div>
+      <div></div>
     </FormTemplate>
   );
 };
