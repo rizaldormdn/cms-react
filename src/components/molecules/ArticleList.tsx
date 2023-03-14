@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DataGrid, GridCellParams, GridColDef, GridValueGetterParams, GridRowModel, GridAlignment } from "@mui/x-data-grid";
+import { DataGrid, GridCellParams, GridColDef, GridRowModel, GridAlignment } from "@mui/x-data-grid";
 import Button from "../atoms/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -223,8 +223,6 @@ function getStatus (status:string) {
         <DataGrid
           rows={rows}
           columns={columns.concat(actionColumn)}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
           checkboxSelection
         />
       </div>
