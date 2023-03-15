@@ -13,13 +13,14 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
+				{/* Public Routes */}
 				<Route path="/" element={<Admin />} />
-				{/* <Route path="/test" element={<Test />} /> */}
-				{/* <Route path="/createarticle" element={<CreateArticle />} /> */}
 				<Route path="/success" element={<SuccessPage />} />
 				<Route path="/register" element={<Registration />} />
 				<Route path="/login" element={<Login />} />
 
+				{/* Protected Routes */}
+				
 
 				{/* Error Route */}
 				<Route path="*" element={<BadRequest />} />
