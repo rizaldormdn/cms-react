@@ -12,7 +12,7 @@ type Props = {
 	background?: string;
 	title: string;
 	content: string;
-	onsubmit: (e: React.FormEvent<HTMLFormElement>) => void
+	onsubmit?: (e: React.FormEvent<HTMLFormElement>) => void
 };
 
 const FormTemplate = (props: Props) => {

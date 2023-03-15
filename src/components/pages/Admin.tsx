@@ -1,11 +1,12 @@
-import React from 'react'
 import AdminTemplate from '../templates/AdminTemplate'
 
 type Props = {}
 
 const Admin = (props: Props) => {
   return (
-    <AdminTemplate />
+    <AdminTemplate>
+      Welcome to the Admin Page
+    </AdminTemplate>
   )
 }
 

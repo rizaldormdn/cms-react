@@ -4,6 +4,8 @@ type Props = {
 	placeHolder: string;
 	inputStyle?: string;
 	style?: string;
+	type?: string;
+	value?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 const Input = (props: Props) => {
@@ -13,6 +15,8 @@ const Input = (props: Props) => {
 				className={`px-2 py-2 border border-gray-400 focus:border-gray-500 lg:w-full md:w-full rounded-md ${props.style}`}
 				placeholder={`${props.placeHolder}`}
         onChange={(e) => {props.onChange(e)}}
+				value={props.value}
+				type={props.type}
 			/>
 		</div>
 	);

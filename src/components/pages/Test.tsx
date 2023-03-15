@@ -18,7 +18,9 @@ const Test = () => {
 	};
 
 	return (
-		<AdminTemplate />
+		<AdminTemplate>
+			<div>Here is my content</div>
+		</AdminTemplate>
 	);
 };
 
