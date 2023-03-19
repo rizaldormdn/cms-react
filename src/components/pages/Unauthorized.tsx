@@ -8,7 +8,7 @@ const Unauthorized = () => {
     <ErrorTemplate
       statusCode={401}
       message="You are not authorized! 🔐"
-      description="You don’t have permission to access this page. Go Home!"
+      description="You don’t have permission to access this page. You will be redirect to login in 3 seconds"
       src={UnauthorizedImage}
       image={Tree2}
     />
