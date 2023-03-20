@@ -12,8 +12,8 @@ const Author = () => {
             <div className='flex gap-5 '>
                 <Image
                     src={Avatar}
-                    width="120"
-                    height="120"
+                    width={120}
+                    height={120}
                 />
                 <div className=' bg-[#9155FD] w-[197px] h-[38px] text-white rounded text-center py-1.5 font-semibold mt-5 '>
                     <Button

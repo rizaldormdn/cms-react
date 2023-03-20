@@ -52,7 +52,6 @@ const AuthorTemplate = (props: Props) => {
                 navigate("/create-author");
               }}
               title="Create Author"
-              css="bg-primarymain px-[26px] py-[8px] rounded-[5px] text-white"
             />
           </div>
           <div className="flex justify-center">

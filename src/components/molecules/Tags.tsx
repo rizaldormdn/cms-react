@@ -1,5 +1,4 @@
 import React from 'react'
-import Input from '../atoms/inputs/Input'
 import Label from '../atoms/Label'
 
 const Tags = () => {

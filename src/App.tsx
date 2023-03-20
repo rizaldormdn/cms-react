@@ -8,6 +8,7 @@ import MediaPage from "./components/pages/MediaPage";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
 import Register from "./components/pages/Authentication/Register";
+import ProfilePage from "./components/pages/User/ProfilePage";
 
 const App = () => {
 	return (
@@ -29,6 +30,7 @@ const App = () => {
 				<Route path="/success" element={<SuccessPage />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
+				<Route path="/me" element={<ProfilePage />} />
 
 				{/* Protected Routes */}
 				<Route element={<RequireAuth />}>
