@@ -6,12 +6,12 @@ import Tree3 from "../../assets/images/Tree2-1.svg";
 import { api } from "../../utils/api";
 import Anchor from "../atoms/Anchor";
 import Button from "../atoms/Button";
-import Input from "../atoms/inputs/InputEmail";
 import FormTemplate from "../templates/FormTemplate";
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import { LoginData, useAuth } from "../../contexts/AuthContext";
 import { useLocalStorage } from "../../hooks/useStorage";
+import Input from "../atoms/Input";
 
 const LoginForm = () => {
 	const navigate = useNavigate();

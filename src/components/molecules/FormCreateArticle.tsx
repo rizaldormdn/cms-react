@@ -1,5 +1,4 @@
 import Button from '../atoms/Button'
-import Input from '../atoms/inputs/Input'
 import Label from '../atoms/Label'
 import RichTextEditor from '../atoms/RTE'
 import AddIcon from '@mui/icons-material/Add';

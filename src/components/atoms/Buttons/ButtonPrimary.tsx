@@ -1,14 +1,13 @@
-type ButtonProps = {
+type Props = {
 	action: (e: React.MouseEvent) => void;
 	title: string;
 	buttonStyle?: string;
-	type?: "PRIMARY" | "SECONDARY" | "WARNING" | "INFO" | "DANGER";
 };
 
-const Button = (props: ButtonProps) => {
+const ButtonPrimary = (props: Props) => {
 	return (
 		<button
-			className={`${props.buttonStyle}`}
+			className="py-2 px-6 bg-[#9155fd] rounded-md text-base uppercase text-white"
 			onClick={(e) => {
 				props.action(e);
 			}}
@@ -18,4 +17,4 @@ const Button = (props: ButtonProps) => {
 	);
 };
 
-export default Button;
+export default ButtonPrimary;
