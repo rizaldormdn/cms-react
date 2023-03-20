@@ -16,10 +16,6 @@
 		@apply overflow-x-hidden duration-700 lg:text-xl text-base bg-bglight;
 	}
 
-	a {
-		@apply text-primarymain hover:text-primaryalternativedark visited:text-primaryalternativedark visited:font-bold;
-	}
-
 	.text-animation {
 		@apply relative text-slate-300 text-[2vw] uppercase font-[800];
 	}

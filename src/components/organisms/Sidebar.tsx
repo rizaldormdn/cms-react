@@ -1,40 +1,30 @@
-import React from "react";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ArticleIcon from "@mui/icons-material/Article";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
-import AdjustIcon from "@mui/icons-material/Adjust";
-import ListItem from "../atoms/ListItem";
 import Header from "../molecules/Header";
-import SideBarButton from "../atoms/SideBarButton";
+import { SiteInfo } from "../../data/SiteInfo";
+import SideBarItem from "../molecules/SideBarItem";
 
-type Props = {};
-
-const Sidebar = (props: Props) => {
+const Sidebar = () => {
   const listItems = [
-    { src: <LibraryBooksIcon />, title: "Blogs", goTo: "/blogs" },
-    { src: <ShoppingBagIcon />, title: "Authors", goTo: "/authors" },
-    { src: <CollectionsIcon />, title: "Media", goTo: "/products" },
-    { src: <AccountBoxIcon />, title: "Contacts", goTo: "/blogs" },
-    { src: <ArticleIcon />, title: "Pages", goTo: "/pages" },
+    { src: <LibraryBooksIcon />, title: "Blogs", route: "/blogs" },
+    { src: <ShoppingBagIcon />, title: "Authors", route: "/authors" },
+    { src: <CollectionsIcon />, title: "Media", route: "/products" },
+    { src: <AccountBoxIcon />, title: "Contacts", route: "/blogs" },
+    { src: <ArticleIcon />, title: "Pages", route: "/pages" },
+    { src: <ArticleIcon />, title: "me", route: "/me" },
   ];
 
   return (
-    <aside className="flex flex-col min-h-screen">
+    <aside className="flex flex-col min-h-screen pr-5">
       <div className="flex justify-items-center w-fit">
-        <Header
-          siteTitle="Materio"
-          siteLogoUrl="https://www.pngarts.com/files/3/Logo-PNG-Transparent-Image.png"
-        />
+        <Header />
         <span className="flex items-center justify-center font-normal">
-          LOG
-        </span>
-        <span className="flex items-center justify-center">
-          <AdjustIcon />
+          {SiteInfo.siteTitle}
         </span>
       </div>
-      <SideBarButton />
       <div className="flex flex-row items-center justify-center mt-[7%] ml-[-40%]">
         <div className="flex justify-items-center w-[50px] h-[1px] bg-slate-400 mr-[10px]"></div>
         <p className="hidden text-[12px] font-sans not-italic font-normal leading-5 text-slate-400 md:flex">
@@ -45,16 +35,13 @@ const Sidebar = (props: Props) => {
         </p>
         <div className="flex justify-items-center w-[90px] h-[1px] bg-slate-400 ml-[10px]"></div>
       </div>
-      {listItems.map((value, index) => {
-        return (
-          <ListItem
-            key={index}
-            goTo={value.goTo}
-            title={value.title}
-            src={value.src}
-          />
-        );
-      })}
+      <div className="flex flex-col gap-2">
+        {listItems.map((item, index) => {
+          return (
+            <SideBarItem key={index} goTo={item.route} src={item.src} title={item.title} />
+          );
+        })}
+      </div>
     </aside>
   );
 };
