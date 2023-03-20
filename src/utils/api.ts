@@ -1,6 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-	baseURL: "http://localhost:8080/",
-	method: "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+	baseURL: process.env.REACT_APP_CMS_HOST
 });
