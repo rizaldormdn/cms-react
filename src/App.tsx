@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SuccessPage from "./components/pages/SuccessPage";
 import Login from "./components/pages/Authentication/Login";
-import BadRequest from "./components/pages/BadRequest";
 import RequireAuth from "./components/pages/RequireAuth";
 import OnboardingPage from "./components/pages/OnboardingPage";
 import MediaPage from "./components/pages/MediaPage";
@@ -9,6 +8,8 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
 import Register from "./components/pages/Authentication/Register";
 import ProfilePage from "./components/pages/User/ProfilePage";
+import NotFoundPage from "./components/pages/Errors/NotFoundPage";
+import CreateAuthorPage from "./components/pages/Author/CreateAuthor";
 
 const App = () => {
 	return (
@@ -30,17 +31,22 @@ const App = () => {
 				<Route path="/success" element={<SuccessPage />} />
 				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
-				<Route path="/me" element={<ProfilePage />} />
 
 				{/* Protected Routes */}
 				<Route element={<RequireAuth />}>
 					<Route path="/" element={<OnboardingPage />} />
-					<Route path="article"></Route>
-					<Route path="author"></Route>
+					<Route path="article" >
+						
+					</Route>
+					<Route path="author">
+						<Route path="create" element={<CreateAuthorPage />} />
+					</Route>
 					<Route path="media" element={<MediaPage />} />
+					<Route path="profile" element={<ProfilePage />} />
 				</Route>
+
 				{/* Error Route */}
-				<Route path="*" element={<BadRequest />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -1,9 +1,8 @@
-import React from "react";
-import ErrorTemplate from "../templates/ErrorTemplate";
-import UnauthorizedImage from "../../assets/images/pose9.png";
-import Tree2 from "../../assets/static/svgs/Tree2.svg";
+import ErrorTemplate from "../../templates/ErrorTemplate";
+import UnauthorizedImage from "../../../assets/images/pose9.png";
+import Tree2 from "../../../assets/static/svgs/Tree2.svg";
 
-const Unauthorized = () => {
+const UnauthorizedPage = () => {
   return (
     <ErrorTemplate
       statusCode={401}
@@ -15,4 +14,4 @@ const Unauthorized = () => {
   );
 };
 
-export default Unauthorized;
+export default UnauthorizedPage;

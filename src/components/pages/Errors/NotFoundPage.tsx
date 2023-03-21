@@ -1,9 +1,9 @@
 import React from "react";
-import ErrorTemplate from "../templates/ErrorTemplate";
-import PagNotFoundImage from "../../assets/images/pose5.png";
-import Tree from "../../assets/static/svgs/Tree.svg";
+import ErrorTemplate from "../../templates/ErrorTemplate";
+import PagNotFoundImage from "../../../assets/images/pose5.png";
+import Tree from "../../../assets/static/svgs/Tree.svg";
 
-const BadRequest = () => {
+const NotFoundPage = () => {
   return (
     <ErrorTemplate
       statusCode={404}
@@ -15,4 +15,4 @@ const BadRequest = () => {
   );
 };
 
-export default BadRequest;
+export default NotFoundPage;

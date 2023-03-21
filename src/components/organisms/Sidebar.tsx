@@ -1,4 +1,3 @@
-import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -9,16 +8,16 @@ import SideBarItem from "../molecules/SideBarItem";
 
 const Sidebar = () => {
   const listItems = [
-    { src: <LibraryBooksIcon />, title: "Blogs", route: "/blogs" },
-    { src: <ShoppingBagIcon />, title: "Authors", route: "/authors" },
-    { src: <CollectionsIcon />, title: "Media", route: "/products" },
-    { src: <AccountBoxIcon />, title: "Contacts", route: "/blogs" },
-    { src: <ArticleIcon />, title: "Pages", route: "/pages" },
-    { src: <ArticleIcon />, title: "me", route: "/me" },
+    { src: <LibraryBooksIcon />, title: "Article", route: "/article" },
+    { src: <ShoppingBagIcon />, title: "Author", route: "/author" },
+    { src: <CollectionsIcon />, title: "Media", route: "/media" },
+    // { src: <AccountBoxIcon />, title: "Contacts", route: "/blogs" },
+    // { src: <ArticleIcon />, title: "Pages", route: "/pages" },
+    { src: <ArticleIcon />, title: "Profile", route: "/profile" },
   ];
 
   return (
-    <aside className="flex flex-col min-h-screen pr-5">
+    <aside className="flex flex-col min-h-screen">
       <div className="flex justify-items-center w-fit">
         <Header />
         <span className="flex items-center justify-center font-normal">
