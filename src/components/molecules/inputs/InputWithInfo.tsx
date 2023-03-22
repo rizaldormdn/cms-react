@@ -39,7 +39,7 @@ const InputWithInfo = (props: Props) => {
 
   return (
     <div className={`flex flex-col ${wrapperStyle}`}>
-      <span className='text-gray-600'>{infoText}</span>
+      <label htmlFor={type} className='text-gray-600'>{infoText}</label>
       <Input disabled={disabled} value={value} onchange={onChange} style={`${inputStyle}`} type={type ? type : "text"} placeHolder={placeholder}   />
     </div>
   )

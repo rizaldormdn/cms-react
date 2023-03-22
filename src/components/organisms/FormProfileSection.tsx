@@ -62,7 +62,7 @@ const FormProfileSection = ({
 					</span>
 				</div>
 			</section>
-			<form className="grid grid-cols-2 gap-3 mt-5 items-end">
+			<form className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5 items-end">
 				<InputWithInfo
 					infoText="Email"
 					onChange={emailChangeHandler!}

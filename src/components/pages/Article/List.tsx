@@ -1,4 +1,3 @@
-import React from 'react'
 import AdminTemplate from '../../templates/AdminTemplate'
 import ArticleList from '../../molecules/ArticleList'
 

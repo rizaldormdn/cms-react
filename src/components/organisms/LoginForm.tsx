@@ -9,14 +9,11 @@ import Button from "../atoms/Button";
 import FormTemplate from "../templates/FormTemplate";
 import { AxiosError } from "axios";
 import { toast } from "react-toastify";
-import { LoginData, useAuth } from "../../contexts/AuthContext";
-import { useLocalStorage } from "../../hooks/useStorage";
 import Input from "../atoms/Input";
+import { saveLoginInfo } from "../pages/RequireAuth";
 
 const LoginForm = () => {
 	const navigate = useNavigate();
-	const [data, setData] = useLocalStorage<LoginData | null>("userData", null);
-	const { login } = useAuth();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -26,9 +23,8 @@ const LoginForm = () => {
 		await api
 			.post("/v1/login", { email, password })
 			.then((res) => {
+				saveLoginInfo(res.data.data.access_token, res.data.data.refresh_token)
 				navigate("/");
-				login(res.data);
-				setData(res.data);
 			})
 			.catch((err: AxiosError) => {
 				if (err.code === "400" || err.code === "404") {
@@ -38,10 +34,6 @@ const LoginForm = () => {
 				}
 			});
 	};
-
-	useEffect(() => {
-		data && navigate("/");
-	});
 
 	return (
 		<FormTemplate

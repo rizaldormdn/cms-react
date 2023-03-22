@@ -10,6 +10,8 @@ import Register from "./components/pages/Authentication/Register";
 import ProfilePage from "./components/pages/User/ProfilePage";
 import NotFoundPage from "./components/pages/Errors/NotFoundPage";
 import CreateAuthorPage from "./components/pages/Author/CreateAuthor";
+import CreateArticlePage from "./components/pages/Article/CreateArticlePage";
+import EditArticlePage from "./components/pages/Article/EditArticlePage";
 
 const App = () => {
 	return (
@@ -36,7 +38,8 @@ const App = () => {
 				<Route element={<RequireAuth />}>
 					<Route path="/" element={<OnboardingPage />} />
 					<Route path="article" >
-						
+						<Route index element={<CreateArticlePage />} />
+						<Route path="/edit" element={<EditArticlePage />} />
 					</Route>
 					<Route path="author">
 						<Route path="create" element={<CreateAuthorPage />} />

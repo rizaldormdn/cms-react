@@ -1,8 +1,26 @@
 import { Outlet, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { AuthProvider, LoginData } from "../../contexts/AuthContext";
-import { useLocalStorage } from "../../hooks/useStorage";
+import { AuthProvider, LoginData, useAuth } from "../../contexts/AuthContext";
 import UnauthorizedPage from "./Errors/UnauthorizedPage";
+
+export const checkLogin = () => {
+	const localAccessToken: string | undefined | null =
+		localStorage.getItem("access_token");
+	const localRefreshToken: string | undefined | null =
+		localStorage.getItem("refresh_token");
+
+	return { localAccessToken, localRefreshToken };
+};
+
+export const saveLoginInfo = (token: string, refresh: string) => {
+	localStorage.setItem('access_token', token)
+	localStorage.setItem('refresh_token', refresh)
+}
+
+export const logout = () => {
+	localStorage.removeItem("access_token");
+	localStorage.removeItem("refresh_token");
+};
 
 const UnauthorizedScene = () => {
 	const navigate = useNavigate();
@@ -15,10 +33,10 @@ const UnauthorizedScene = () => {
 };
 
 const RequireAuth = () => {
-	const [data] = useLocalStorage<LoginData | null>("userData", null);
-
 	return (
-		<AuthProvider>{data ? <Outlet /> : <UnauthorizedScene />}</AuthProvider>
+		<AuthProvider>
+			{checkLogin().localAccessToken ? <Outlet /> : <UnauthorizedScene />}
+		</AuthProvider>
 	);
 };
 
