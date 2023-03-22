@@ -1,16 +1,11 @@
-import React from 'react'
-import Image from '../atoms/Image';
+import { SiteInfo } from '../../data/SiteInfo';
+import MainLogo from './MainLogo';
 
-type Props = {
-  siteTitle: string;
-  siteLogoUrl?: string;
-}
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
-    <header>
-      <h1 className='sr-only'>{props.siteTitle}</h1>
-      {props.siteLogoUrl && <Image alt={props.siteTitle} src={props.siteLogoUrl} width={150} />}
+    <header className='py-2'>
+      <h1 className='sr-only'>{SiteInfo.siteTitle}</h1>
+      <MainLogo />
     </header>
   )
 }

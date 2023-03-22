@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @media screen and (max-width: 768px) {
-  .responsive-1{
-    @apply hidden origin-left duration-200;
-  }
+	.responsive-1 {
+		@apply hidden origin-left duration-200;
+	}
 }
 
 @layer base {
@@ -16,27 +16,54 @@
 		@apply overflow-x-hidden duration-700 lg:text-xl text-base bg-bglight;
 	}
 
-	a {
-		@apply text-primarymain hover:text-primaryalternativedark visited:text-primaryalternativedark visited:font-bold;
+	.text-animation {
+		@apply relative text-slate-300 text-[2vw] uppercase font-[800];
+	}
+	.text-animation::before {
+		@apply content-['Welcome...'] absolute text-green-400 border-r-2 border-green-500 top-0 left-0 w-0 h-full overflow-hidden animate-animate;
 	}
 
-  .text-animation{
-    @apply relative text-slate-300 text-[2vw] uppercase font-[800]
-  }
-  .text-animation::before{
-    @apply content-['Welcome...'] absolute text-green-400 border-r-2 border-green-500 top-0 left-0 w-0 h-full overflow-hidden animate-animate
-  }
+	h1 {
+		@apply text-5xl font-bold leading-tight;
+	}
+
+	h2 {
+		@apply text-4xl font-bold leading-tight;
+	}
+
+	h3 {
+		@apply text-3xl font-bold leading-tight;
+	}
+
+	h4 {
+		@apply text-2xl font-bold leading-tight;
+	}
+
+	h5 {
+		@apply text-xl font-bold leading-tight;
+	}
+
+	h6 {
+		@apply text-lg font-bold leading-tight;
+	}
 }
 
 .sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
 }
 
+.primary-bg {
+	background-color: #9155fd!;
+}
+
+.primary-text {
+	color: #9155fd;
+}

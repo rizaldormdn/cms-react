@@ -26,13 +26,13 @@ const ErrorTemplate = (props: Props) => {
 				<p className="font-normal text-sm font-inter mt-4 text-gray-500">
 					{props.description}
 				</p>
-				<img className="my-2" src={props.src} />
+				<img className="my-2" src={props.src} alt="Tree" />
 				<div className="mx-[642px] mt-[40px] w-[156px] h-[38px] text-base bg-[#9155FD] text-white py-2 px-2 text-center hover:bg-purple-600 rounded-[8px] active:scale-95">
 					<Button title="BACK TO HOME" action={(e) => { navigate('/') }} />
 				</div>
 			</div>
 			<div className="flex absolute ml-[90.07px] mt-[650px]">
-				<img className="w-[88.04px] h-[190px]" src={props.image} />
+				<img className="w-[88.04px] h-[190px]" src={props.image} alt="Tree" />
 			</div>
 		</div>
 	);

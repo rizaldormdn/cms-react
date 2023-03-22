@@ -1,28 +1,55 @@
-import React from "react";
-import { Routes, Route, Router } from "react-router-dom";
-import Admin from "./components/pages/Admin";
-import BadRequest from "./components/pages/BadRequest";
-import { BrowserRouter } from "react-router-dom";
-import CreateArticle from "./components/pages/CreateArticle";
-import EditArticle from "./components/pages/EditArticle";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SuccessPage from "./components/pages/SuccessPage";
-import Test from "./components/pages/Test";
-import Login from "./components/pages/Login";
-import Registration from "./components/pages/Registration";
+import Login from "./components/pages/Authentication/Login";
+import RequireAuth from "./components/pages/RequireAuth";
+import OnboardingPage from "./components/pages/OnboardingPage";
+import MediaPage from "./components/pages/MediaPage";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.min.css';
+import Register from "./components/pages/Authentication/Register";
+import ProfilePage from "./components/pages/User/ProfilePage";
+import NotFoundPage from "./components/pages/Errors/NotFoundPage";
+import CreateAuthorPage from "./components/pages/Author/CreateAuthor";
+import CreateArticlePage from "./components/pages/Article/CreateArticlePage";
+import EditArticlePage from "./components/pages/Article/EditArticlePage";
 
 const App = () => {
 	return (
 		<BrowserRouter>
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="light"
+			/>
 			<Routes>
-				<Route path="/" element={<Admin />} />
-				{/* <Route path="/test" element={<Test />} /> */}
-				<Route path="/createarticle" element={<CreateArticle />} />
-				<Route path="/editarticle" element={<EditArticle />} />
+				{/* Public Routes */}
 				<Route path="/success" element={<SuccessPage />} />
-				<Route path="/register" element={<Registration />} />
+				<Route path="/register" element={<Register />} />
 				<Route path="/login" element={<Login />} />
+
+				{/* Protected Routes */}
+				<Route element={<RequireAuth />}>
+					<Route path="/" element={<OnboardingPage />} />
+					<Route path="article" >
+						<Route index element={<CreateArticlePage />} />
+						<Route path="/edit" element={<EditArticlePage />} />
+					</Route>
+					<Route path="author">
+						<Route path="create" element={<CreateAuthorPage />} />
+					</Route>
+					<Route path="media" element={<MediaPage />} />
+					<Route path="profile" element={<ProfilePage />} />
+				</Route>
+
 				{/* Error Route */}
-				<Route path="*" element={<BadRequest />} />
+				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

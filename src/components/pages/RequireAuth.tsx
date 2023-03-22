@@ -1,14 +1,43 @@
-import React, { useContext } from 'react'
-// import { AuthContext } from '../../hooks/useAuth/AuthContext'
+import { Outlet, useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { AuthProvider, LoginData, useAuth } from "../../contexts/AuthContext";
+import UnauthorizedPage from "./Errors/UnauthorizedPage";
 
-type Props = {}
+export const checkLogin = () => {
+	const localAccessToken: string | undefined | null =
+		localStorage.getItem("access_token");
+	const localRefreshToken: string | undefined | null =
+		localStorage.getItem("refresh_token");
 
-const RequireAuth = (props: Props) => {
-  // const { authState } = useContext(AuthContext)
+	return { localAccessToken, localRefreshToken };
+};
 
-  return (
-    <div>RequireAuth</div>
-  )
+export const saveLoginInfo = (token: string, refresh: string) => {
+	localStorage.setItem('access_token', token)
+	localStorage.setItem('refresh_token', refresh)
 }
 
-export default RequireAuth
+export const logout = () => {
+	localStorage.removeItem("access_token");
+	localStorage.removeItem("refresh_token");
+};
+
+const UnauthorizedScene = () => {
+	const navigate = useNavigate();
+	toast("Unauthorized");
+	setTimeout(() => {
+		navigate("login");
+	}, 5000);
+
+	return <UnauthorizedPage />;
+};
+
+const RequireAuth = () => {
+	return (
+		<AuthProvider>
+			{checkLogin().localAccessToken ? <Outlet /> : <UnauthorizedScene />}
+		</AuthProvider>
+	);
+};
+
+export default RequireAuth;

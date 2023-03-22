@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Badge from "@mui/material/Badge";
 import Avatar from "@mui/material/Avatar";
@@ -26,13 +25,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 	},
 }));
 
-const SmallAvatar = styled(Avatar)(({ theme }) => ({
-	width: 22,
-	height: 22,
-	border: `2px solid ${theme.palette.background.paper}`,
-}));
+type Props = {
+	avatarSource?: string
+}
 
-export default function BadgeAvatars() {
+export default function BadgeAvatars({ avatarSource }: Props) {
 	return (
 		<Stack direction="row" spacing={2}>
 			<StyledBadge
@@ -41,7 +38,7 @@ export default function BadgeAvatars() {
 				variant="dot"
         onClick={(e) => {alert('Clicked')}}
 			>
-				<Avatar sx={{":hover": "cursor: pointer"}} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+				<Avatar alt="Mahrus" src="" />
 			</StyledBadge>
 		</Stack>
 	);

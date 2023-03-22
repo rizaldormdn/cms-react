@@ -13,6 +13,5 @@ const defaultOptions: FormatOption = {
 };
 
 export function formatDate(date: Date, countryCode: string): string {
-	date.toLocaleDateString(countryCode, { day: "numeric" });
-	return "";
+	return date.toLocaleDateString(countryCode, { day: "numeric" });
 }
