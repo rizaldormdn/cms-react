@@ -44,7 +44,6 @@ const AuthorTemplate = (props: Props) => {
   return (
     <div className="flex flex-row-reverse min-h-screen w-full">
       <div className="flex flex-col justify-between w-full">
-        <PrimaryNavbar />
         <Container>
           <div className=" flex justify-end">
             <Button
@@ -59,14 +58,6 @@ const AuthorTemplate = (props: Props) => {
             <Table items={authors} />
           </div>
         </Container>
-        <Footer
-          established={false}
-          author="Salt Academy"
-          authorLink="https://saltacademy.id"
-        />
-      </div>
-      <div className="flex flex-col w-1/5">
-        <Sidebar />
       </div>
     </div>
   );

@@ -3,31 +3,14 @@ import Input from '../atoms/inputs/Input'
 import Label from '../atoms/Label'
 import RichTextEditor from '../atoms/RTE'
 import AddIcon from '@mui/icons-material/Add';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { json } from 'stream/consumers';
 
-type Article = {
-    title: string,
-    };
 
-const FormCreateArticle = () => {
-    const [first, setfirst] = useState<Article>(Object)
 
-    useEffect(() => {
-        axios.get(`http://localhost:8080/v1/articles?search=Saya baik`).then((res) => {
-        setfirst(res.data.data.articles[0])
-        console.log(res.data.data);
-        
-        }).catch((err) => {
-        console.log(err)
-        })
-        },[])
-
+const FormEditArticle = () => {
+    
     return (
         <div>
             <div >
-                <p>{first.title}</p>
                 <Label label='Title' />
                 <div className='flex'>
                 <div className='w-full'>
@@ -66,4 +49,4 @@ const FormCreateArticle = () => {
     )
 }
 
-export default FormCreateArticle
+export default FormEditArticle

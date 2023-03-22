@@ -10,7 +10,7 @@ const Header = (props: Props) => {
   return (
     <header>
       <h1 className='sr-only'>{props.siteTitle}</h1>
-      {props.siteLogoUrl && <Image alt={props.siteTitle} src={props.siteLogoUrl} height={50} width={50} />}
+      {props.siteLogoUrl && <Image alt={props.siteTitle} src={props.siteLogoUrl} width={150} />}
     </header>
   )
 }

@@ -4,6 +4,7 @@ import Admin from "./components/pages/Admin";
 import BadRequest from "./components/pages/BadRequest";
 import { BrowserRouter } from "react-router-dom";
 import CreateArticle from "./components/pages/CreateArticle";
+import EditArticle from "./components/pages/EditArticle";
 import SuccessPage from "./components/pages/SuccessPage";
 import Test from "./components/pages/Test";
 import Login from "./components/pages/Login";
@@ -15,12 +16,11 @@ const App = () => {
 			<Routes>
 				<Route path="/" element={<Admin />} />
 				{/* <Route path="/test" element={<Test />} /> */}
-				{/* <Route path="/createarticle" element={<CreateArticle />} /> */}
+				<Route path="/createarticle" element={<CreateArticle />} />
+				<Route path="/editarticle" element={<EditArticle />} />
 				<Route path="/success" element={<SuccessPage />} />
 				<Route path="/register" element={<Registration />} />
 				<Route path="/login" element={<Login />} />
-
-
 				{/* Error Route */}
 				<Route path="*" element={<BadRequest />} />
 			</Routes>

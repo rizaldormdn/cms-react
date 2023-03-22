@@ -1,8 +1,9 @@
 import React from 'react'
 import CreateArticleTemplate from '../templates/CreateArticleTemplate'
 
-type Props = {}
-
+type Props = {
+  };
+  
 const CreateArticle = (props: Props) => {
   return (
     <CreateArticleTemplate />

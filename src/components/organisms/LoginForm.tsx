@@ -21,7 +21,7 @@ const LoginForm = () => {
     try {
       const res = await api.post("/v1/login", { email, password })
       console.log(res.data);
-      navigate("/createarticle")
+      navigate("/")
       return res
 
     } catch (error) {
@@ -36,21 +36,24 @@ const LoginForm = () => {
       src={Tree3}
       image={Tree}
       background={Mask}
-      onsubmit={handleLogin}
+      onSubmit={handleLogin}
     >
       <div className="p-6">
-        <Input type="email" placeHolder="email" style={'mb-5'} onChange={(e) => setEmail(e.target.value)} value={email} />
+        <Input type={"email"} placeHolder="email" style={'mb-5'} onChange={(e) => setEmail(e.target.value)} value={email} />
         <Input type={"password"} placeHolder={'Password'} onChange={(e) => setPassword(e.target.value)} value={password} />
       </div>
       <div className="flex flex-row justify-between text-[14px] mx-10">
-        <input type="checkbox" id="rember-me" />
-        <label>Rember Me </label>
+        <div>
+          <input type="checkbox" id="rember-me" />
+          <label className="ml-2">Rember Me </label>
+        </div>
         <a href="/">Forgot Password</a>
       </div>
       <div className="mx-10">
         <Button
           title="LOGIN"
           action={(e) => { }}
+          buttonStyle="bg-cyan-200 px-5 py-2 rounded-full"
         />
         <p className="text-base">New on out Platform? <Anchor internal title="Signup" url="/register" /></p>
       </div>

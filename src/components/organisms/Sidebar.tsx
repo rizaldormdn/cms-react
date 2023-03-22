@@ -13,7 +13,7 @@ type Props = {};
 
 const Sidebar = (props: Props) => {
   const listItems = [
-    { src: <LibraryBooksIcon />, title: "Blogs", goTo: "/blogs" },
+    { src: <LibraryBooksIcon />, title: "Blogs", goTo: "/createarticle" },
     { src: <ShoppingBagIcon />, title: "Authors", goTo: "/authors" },
     { src: <CollectionsIcon />, title: "Media", goTo: "/products" },
     { src: <AccountBoxIcon />, title: "Contacts", goTo: "/blogs" },
@@ -22,17 +22,11 @@ const Sidebar = (props: Props) => {
 
   return (
     <aside className="flex flex-col min-h-screen">
-      <div className="flex justify-items-center w-fit">
+      <div className="flex justify-center w-fit ml-2 p-5">
         <Header
           siteTitle="Materio"
-          siteLogoUrl="https://www.pngarts.com/files/3/Logo-PNG-Transparent-Image.png"
+          siteLogoUrl="/logo.svg"
         />
-        <span className="flex items-center justify-center font-normal">
-          LOG
-        </span>
-        <span className="flex items-center justify-center">
-          <AdjustIcon />
-        </span>
       </div>
       <SideBarButton />
       <div className="flex flex-row items-center justify-center mt-[7%] ml-[-40%]">
