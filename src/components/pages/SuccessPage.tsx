@@ -5,7 +5,7 @@ const SuccessPage = () => {
 
 	return (
 		<SuccessTemplate
-      route="/"
+			route="/"
 			message="Success Create new Article!"
 			description="Redirect to previous page"
 		/>

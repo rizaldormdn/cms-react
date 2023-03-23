@@ -4,7 +4,7 @@ type Props = {
 
 const LogoText = (props: Props) => {
   return (
-    <h3 className=" text-[24px] font-medium leading-[20px]">{props.text ? props.text : "Dinar Education" }</h3>
+    <h3 className=" text-[24px] font-medium leading-[20px]">{props.text ? props.text : "Sekolah alam pangrango" }</h3>
   );
 };
 
