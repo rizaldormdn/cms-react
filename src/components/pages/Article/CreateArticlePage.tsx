@@ -8,7 +8,7 @@ const CreateArticlePage = () => {
   }
 
   return (
-    <AdminTemplate>
+    <AdminTemplate pageTitle='Create Article'>
       <FormCreateArticle fileHandler={fileHandler} />
     </AdminTemplate>
   )
