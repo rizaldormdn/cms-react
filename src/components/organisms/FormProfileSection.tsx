@@ -5,6 +5,9 @@ import Avatar from "../../assets/images/Avatar.svg";
 import InputWithInfo from "../molecules/inputs/InputWithInfo";
 import ButtonSecondary from "../atoms/Buttons/ButtonSecondary";
 import CDropdown from "../atoms/CDropdown";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { checkLogin } from "../pages/RequireAuth";
 
 type Props = {
 	uploadHandler?: (e: React.MouseEvent<Element, MouseEvent>) => void;
@@ -22,23 +25,52 @@ type Props = {
 	lastNameChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	passwordChangeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
+type Profile = {
+	email: string
+	name: {
+		first: string
+		full: string
+		last: string
+	}
+}
 
 const FormProfileSection = ({
 	uploadHandler,
 	resetHandler,
-	avatarSource,
 	saveHandler,
+	avatarSource,
 	cancelHandler,
 	disableSelect,
 	emailChangeHandler,
 	dropdownList,
 	dropdownSelectHandler,
 	droptdownSelectedOption,
-	firstNameChangeHandler,
-	lastNameChangeHandler,
 	passwordChangeHandler,
 	userNameChangeHandler,
+	firstNameChangeHandler,
+	lastNameChangeHandler
 }: Props) => {
+	const { localAccessToken } = checkLogin()
+
+	const [profile, setProfile] = useState<Profile>()
+
+	const handleProfile = async () => {
+		await axios.get("http://localhost:8080/v1/me", {
+			headers: {
+				Authorization: `Bearer ${localAccessToken}`
+			}
+		}).then((res) => {
+			setProfile(res.data.data.user)
+			console.log
+				(res.data.data.user)
+		}).catch((err) => {
+			console.error(err);
+		})
+	}
+
+	useEffect(() => {
+		handleProfile()
+	}, [])
 
 	return (
 		<>
@@ -68,24 +100,28 @@ const FormProfileSection = ({
 					onChange={emailChangeHandler!}
 					placeholder="john.doe@email.com"
 					type="email"
+					value={profile?.email}
 				/>
 				<InputWithInfo
 					infoText="Username"
 					onChange={userNameChangeHandler!}
 					placeholder="john.doe"
 					type="text"
+					value={profile?.name.full}
 				/>
 				<InputWithInfo
 					infoText="Firstname"
 					onChange={firstNameChangeHandler!}
 					placeholder="Johan"
 					type="text"
+					value={profile?.name.first}
 				/>
 				<InputWithInfo
 					infoText="Lastname"
 					onChange={lastNameChangeHandler!}
 					placeholder="Doe"
 					type="text"
+					value={profile?.name.last}
 				/>
 				<InputWithInfo
 					infoText="Password"

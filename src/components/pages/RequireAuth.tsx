@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { AuthProvider, LoginData, useAuth } from "../../contexts/AuthContext";
+import { AuthProvider } from "../../contexts/AuthContext";
 import UnauthorizedPage from "./Errors/UnauthorizedPage";
 
 export const checkLogin = () => {

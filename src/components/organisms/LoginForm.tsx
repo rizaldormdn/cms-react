@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
+import { AxiosError } from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Mask from "../../assets/images/Mask.svg";
 import Tree from "../../assets/images/Tree.svg";
 import Tree3 from "../../assets/images/Tree2-1.svg";
 import { api } from "../../utils/api";
 import Anchor from "../atoms/Anchor";
 import Button from "../atoms/Button";
-import FormTemplate from "../templates/FormTemplate";
-import { AxiosError } from "axios";
-import { toast } from "react-toastify";
 import Input from "../atoms/Input";
 import { saveLoginInfo } from "../pages/RequireAuth";
+import FormTemplate from "../templates/FormTemplate";
 
 const LoginForm = () => {
 	const navigate = useNavigate();
@@ -21,7 +21,7 @@ const LoginForm = () => {
 	const handleLogin = async (e: React.MouseEvent) => {
 		e.preventDefault();
 		await api
-			.post("/v1/login", { email, password })
+			.post("http://localhost:8080/v1/login", { email, password })
 			.then((res) => {
 				saveLoginInfo(res.data.data.access_token, res.data.data.refresh_token)
 				navigate("/");
