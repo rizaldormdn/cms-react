@@ -2,7 +2,7 @@ import { useState } from "react";
 import FormProfileSection from "../../organisms/FormProfileSection";
 import AdminTemplate from "../../templates/AdminTemplate";
 
-const CreateAuthorPage = () => {
+const EditAuthorPage = () => {
 	const [selected, setSelected] = useState<string>("");
 
 	const dropdownSelectHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -10,7 +10,7 @@ const CreateAuthorPage = () => {
 	}
 
 	return (
-		<AdminTemplate pageTitle="Create Author">
+		<AdminTemplate pageTitle="Edit Author">
 			<div className="flex flex-col w-full">
 				<FormProfileSection
 					dropdownList={["admin", "member"]}
@@ -22,4 +22,4 @@ const CreateAuthorPage = () => {
 	);
 };
 
-export default CreateAuthorPage;
+export default EditAuthorPage;
