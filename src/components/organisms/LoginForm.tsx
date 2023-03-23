@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { AxiosError } from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Mask from "../../assets/images/Mask.svg";
 import Tree from "../../assets/images/Tree.svg";
 import Tree3 from "../../assets/images/Tree2-1.svg";
 import { api } from "../../utils/api";
 import Anchor from "../atoms/Anchor";
 import Button from "../atoms/Button";
-import FormTemplate from "../templates/FormTemplate";
-import { AxiosError } from "axios";
-import { toast } from "react-toastify";
 import Input from "../atoms/Input";
 import { saveLoginInfo } from "../pages/RequireAuth";
+import FormTemplate from "../templates/FormTemplate";
 
 const LoginForm = () => {
 	const navigate = useNavigate();
+	const { login } = useAuth();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -22,8 +23,9 @@ const LoginForm = () => {
 		e.preventDefault();
 		await api
 			.post("/v1/login", { email, password })
-			.then((res) => {
-				saveLoginInfo(res.data.data.access_token, res.data.data.refresh_token)
+			.then(async (res) => {
+				login(res.data.data.access_token, res.data.data.refresh_token);
+				toast("Welcome!");
 				navigate("/");
 			})
 			.catch((err: AxiosError) => {
@@ -35,6 +37,16 @@ const LoginForm = () => {
 			});
 	};
 
+	useEffect(() => {
+		if (
+			checkLogin().localAccessToken !== null &&
+			checkLogin().localRefreshToken !== null
+		) {
+			toast("You have been authenticated");
+			navigate("/login");
+		}
+	});
+
 	return (
 		<FormTemplate
 			title="Welcome to CMS Admin! 👋🏻"
@@ -43,7 +55,7 @@ const LoginForm = () => {
 			image={Tree}
 			background={Mask}
 		>
-			<div className="flex p-6 w-full md:flex-col gap-4">
+			<div className="flex p-6 w-full flex-col gap-4">
 				<Input
 					type="email"
 					placeHolder="email"
@@ -62,21 +74,10 @@ const LoginForm = () => {
 					<input type="checkbox" id="rember-me" />
 					<label>Remember Me </label>
 				</div>
-				{/* <a href="/">Forgot Password</a> */}
 			</div>
-			<div className="mx-10">
-				<Button
-					title="LOGIN"
-					action={(e) => {
-						handleLogin(e);
-					}}
-				/>
-				<p className="text-base">
-					New on out Platform?{" "}
-					<Anchor internal title="Signup" url="/register" />
-				</p>
+			<div className="flex flex-col px-5 w-full">
+				<ButtonPrimary buttonStyle="w-full" action={handleLogin} title="login" />
 			</div>
-			<div></div>
 		</FormTemplate>
 	);
 };
