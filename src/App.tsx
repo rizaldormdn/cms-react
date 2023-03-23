@@ -12,6 +12,7 @@ import NotFoundPage from "./components/pages/Errors/NotFoundPage";
 import CreateAuthorPage from "./components/pages/Author/CreateAuthor";
 import CreateArticlePage from "./components/pages/Article/CreateArticlePage";
 import EditArticlePage from "./components/pages/Article/EditArticlePage";
+import List from "./components/pages/Article/List";
 
 const App = () => {
 	return (
@@ -38,8 +39,10 @@ const App = () => {
 				<Route element={<RequireAuth />}>
 					<Route path="/" element={<OnboardingPage />} />
 					<Route path="article" >
+						{/* <Route index element={<List />} /> */}
 						<Route index element={<CreateArticlePage />} />
-						<Route path="/edit" element={<EditArticlePage />} />
+						{/* <Route path="/createarticle" element={<CreateArticlePage />} /> */}
+						{/* <Route path="/edit" element={<EditArticlePage />} /> */}
 					</Route>
 					<Route path="author">
 						<Route path="create" element={<CreateAuthorPage />} />

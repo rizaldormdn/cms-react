@@ -1,8 +1,11 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ButtonPrimary from "../../atoms/Buttons/ButtonPrimary"
 import ButtonSecondary from "../../atoms/Buttons/ButtonSecondary"
 import Input from "../../atoms/Input"
-import RichTextEditor from "../../atoms/RTE"
+import RichTextEditor from "./RichTextEditor"
 import InputWithInfo from "../inputs/InputWithInfo"
+import axios from 'axios'
 
 type Props = {
   saveDraftAction?: (e: React.MouseEvent<Element, MouseEvent>) => void;
@@ -21,6 +24,51 @@ const FormCreateArticle = ({
   tagsOnChange,
   titleOnChange
 }: Props) => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [tags, setTags] = useState("");
+  const [excerpt, setExcerpt] = useState("");
+  const [image, setImage] = useState("");
+  const navigate = useNavigate();
+
+  const publishArticle = async (e: any) => {
+    e.preventDefault();
+    try {
+        await axios.post("http://localhost:8080/v1/article", {
+            title: title,
+            content: content,
+            tags: tags,
+            excerpt: excerpt,
+            image: image,
+        });
+        navigate("/article");
+    } catch (error) {
+        if (error) {
+            console.log(error);
+            
+        }
+    }
+};
+
+const saveDraft = async (e: any) => {
+  e.preventDefault();
+  try {
+      await axios.post("http://localhost:8080/v1/article", {
+          title: title,
+          content: content,
+          tags: tags,
+          excerpt: excerpt,
+          image: image,
+      });
+      navigate("/article");
+  } catch (error) {
+      if (error) {
+          console.log(error);
+          
+      }
+  }
+};
+
   return (
     <div className="grid grid-cols-1">
       <section>
@@ -29,10 +77,11 @@ const FormCreateArticle = ({
       <section>
         <RichTextEditor />
       </section>
-      <section className="flex flex-row gap-5 items-end flex-wrap">
-        <InputWithInfo wrapperStyle="w-1/3" infoText="Tags" placeholder="tutorial, review, ... " onChange={tagsOnChange!} />
-        <InputWithInfo wrapperStyle="w-1/3" infoText="Excerpt" placeholder="Some interesting excerpt" onChange={excerptOnChange!} />
-        <Input style="w-1/3" type="file" onchange={fileHandler!} />
+      <section className="flex flex-row gap-5">
+        <InputWithInfo wrapperStyle="w-full" desc="To enter multiple tags please use a coma (,)" infoText="Tags" placeholder="tutorial, review, ... " onChange={tagsOnChange!} />
+        <InputWithInfo wrapperStyle="w-full" infoText="Excerpt" placeholder="Some interesting excerpt" onChange={excerptOnChange!} />
+        <InputWithInfo wrapperStyle="w-full" desc="Insert Featured Image" type="file" onChange={fileHandler!} />
+        {/* <Input style="w-full" type="file" onchange={fileHandler!} /> */}
       </section>
       <section className="flex py-5 items-center justify-center gap-5">
         <ButtonPrimary title="save draft" action={saveDraftAction!} />
