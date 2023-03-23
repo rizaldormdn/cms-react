@@ -5,15 +5,16 @@ import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import Header from "../molecules/Header";
 import { SiteInfo } from "../../data/SiteInfo";
 import SideBarItem from "../molecules/SideBarItem";
+import LogoutIcon from '@mui/icons-material/Logout';
+import FaceIcon from '@mui/icons-material/Face';
 
 const Sidebar = () => {
   const listItems = [
     { src: <LibraryBooksIcon />, title: "Article", route: "/article" },
     { src: <ShoppingBagIcon />, title: "Author", route: "/author" },
     { src: <CollectionsIcon />, title: "Media", route: "/media" },
-    // { src: <AccountBoxIcon />, title: "Contacts", route: "/blogs" },
-    // { src: <ArticleIcon />, title: "Pages", route: "/pages" },
-    { src: <ArticleIcon />, title: "Profile", route: "/profile" },
+    { src: <FaceIcon />, title: "Profile", route: "/profile" },
+    { src: <LogoutIcon />, title: "Logout", route: "/logout" },
   ];
 
   return (
