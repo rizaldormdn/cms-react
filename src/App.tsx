@@ -14,6 +14,7 @@ import CreateArticlePage from "./components/pages/Article/CreateArticlePage";
 import EditArticlePage from "./components/pages/Article/EditArticlePage";
 import EditAuthorPage from "./components/pages/Author/EditAuthor";
 import Logout from "./components/pages/Authentication/Logout";
+import List from './components/pages/Product/List'
 
 const App = () => {
 	return (
@@ -41,12 +42,15 @@ const App = () => {
 				<Route element={<RequireAuth />}>
 					<Route index element={<OnboardingPage />} />
 					<Route path="article">
-						<Route index element={<CreateArticlePage />} />
-						<Route path="edit" element={<EditArticlePage />} />
+						{/* <Route index element={<CreateArticlePage />} /> */}
+						{/* <Route path="edit" element={<EditArticlePage />} /> */}
 					</Route>
 					<Route path="author">
 						<Route index element={<CreateAuthorPage />} />
 						<Route path="edit" element={<EditAuthorPage />} />
+					</Route>
+					<Route path="product">
+						<Route index element={<List />}/>
 					</Route>
 					<Route path="media" element={<MediaPage />} />
 					<Route path="profile" element={<ProfilePage />} />

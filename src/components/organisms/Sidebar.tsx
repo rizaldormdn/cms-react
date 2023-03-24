@@ -1,18 +1,20 @@
 import CollectionsIcon from "@mui/icons-material/Collections";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-import ArticleIcon from "@mui/icons-material/Article";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
-import Header from "../molecules/Header";
-import { SiteInfo } from "../../data/SiteInfo";
-import SideBarItem from "../molecules/SideBarItem";
-import LogoutIcon from '@mui/icons-material/Logout';
 import FaceIcon from '@mui/icons-material/Face';
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import LogoutIcon from '@mui/icons-material/Logout';
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { SiteInfo } from "../../data/SiteInfo";
+import Header from "../molecules/Header";
+import SideBarItem from "../molecules/SideBarItem";
+
 
 const Sidebar = () => {
   const listItems = [
     { src: <LibraryBooksIcon />, title: "Article", route: "/article" },
     { src: <ShoppingBagIcon />, title: "Author", route: "/author" },
     { src: <CollectionsIcon />, title: "Media", route: "/media" },
+    { src: <ShoppingBasketIcon />, title: "Product", route: "/product" },
     { src: <FaceIcon />, title: "Profile", route: "/profile" },
     { src: <LogoutIcon />, title: "Logout", route: "/logout" },
   ];

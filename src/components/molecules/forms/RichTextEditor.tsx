@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 
@@ -20,7 +20,7 @@ const RichTextEditor = () => {
 
     //     };
     // }
-    
+
     const modules = {
         toolbar: {
             container: [
@@ -50,14 +50,14 @@ const RichTextEditor = () => {
 
     return (
         <div className="mx-auto h-auto w-full mt-5 mb-20">
-            <ReactQuill
+            {/* <ReactQuill
                 style={{ height: "300px" }}
                 theme="snow"
                 modules={modules}
                 value={content}
                 onChange={setContent}
                 placeholder={'type here...'}
-            />
+            /> */}
         </div>
     );
 };

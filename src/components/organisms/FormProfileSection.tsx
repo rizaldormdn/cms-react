@@ -8,6 +8,7 @@ import CDropdown from "../atoms/CDropdown";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { checkLogin } from "../pages/RequireAuth";
+import { api } from "../../utils/api";
 
 type Props = {
 	uploadHandler?: (e: React.MouseEvent<Element, MouseEvent>) => void;
@@ -55,7 +56,7 @@ const FormProfileSection = ({
 	const [profile, setProfile] = useState<Profile>()
 
 	const handleProfile = async () => {
-		await axios.get("http://localhost:8080/v1/me", {
+		await api.get("/v1/me", {
 			headers: {
 				Authorization: `Bearer ${localAccessToken}`
 			}
